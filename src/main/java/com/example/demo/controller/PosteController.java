@@ -24,6 +24,10 @@ public class PosteController {
     public ResponseEntity<List<Poste>> getAllPoste() {
         return new ResponseEntity<>(posteService.getPoste(), HttpStatus.OK);
     }
+    @GetMapping("/poste/{id}")
+    public ResponseEntity<Poste> getPosteById(@PathVariable Long id){
+        return new ResponseEntity<>(posteService.getPosteById(id),HttpStatus.OK);
+    }
 
     @DeleteMapping("/poste/{id}")
     public ResponseEntity<HttpStatus> supprimerPoste(@PathVariable Long id) {

@@ -9,6 +9,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -66,20 +67,26 @@ public class User {
     @Column(name = "ANNEE_EXPERIENCE")
     private Long anneeExperience;
 
-    @Column(name = "NIVEAU_ETUDE")
-    private String niveauEtude;
 
     private Boolean recomendation;
     private String collaborateur;
     private String commentaire;
     private String anciennete;
+    @Column(name = "SALAIRE_DE_BASE")
+    private BigDecimal salaireDeBase;
+    @Column(name = "DATE_DEBUT_CONTRAT")
+    @JsonFormat(pattern = "dd/mm/yyyy")
+    private Date dateDebutContrat;
+    @Column(name = "DATE_FIN_CONTRAT")
+    private Date dateFinContrat;
 
+    private Long idTypeContrat;
+    private Long idAvantageSalaire;
+    private Long idNiveauEtude;
+    private Long idPoste;
+    private Long idResponsable;
+    private Long idDepartement;
 
-    @Column(name = "ID_GRADE")
-    private Long idGrade;
-
-    @Column(name = "ID_CONTRAT")
-    private Long idContrat;
 
     @Transient
     private List<PieceJointe> pieceJointes;

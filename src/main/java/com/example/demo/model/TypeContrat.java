@@ -18,9 +18,4 @@ public class TypeContrat {
     private Long idTypeContrat;
     @Column(name = "NOM_TYPE_CONTRAT")
     private String nomTypeContrat;
-    @Column(name = "ID_CONTRAT")
-    private Long idContrat;
-
-    @Transient
-    private List<AvantageSalaire> avantageSalaires;
 }

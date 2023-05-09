@@ -2,7 +2,6 @@ package com.example.demo.service.serviceImpl;
 
 import com.example.demo.exception.ResourceNotFoundException;
 import com.example.demo.model.Departement;
-import com.example.demo.model.Grade;
 import com.example.demo.repository.DepartementRepo;
 import com.example.demo.service.DepartementService;
 import lombok.RequiredArgsConstructor;
@@ -37,5 +36,9 @@ public class DepartementServiceImpl implements DepartementService {
         } catch (Exception e) {
             throw new ResourceNotFoundException("erreur de supprimer departement ");
         }
+    }
+
+    public Departement getById(Long id) {
+        return departementRepo.findById(id).get();
     }
 }

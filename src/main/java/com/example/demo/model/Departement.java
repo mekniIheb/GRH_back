@@ -18,8 +18,4 @@ public class Departement {
     private Long idDepartement;
     @Column(name = "NOM_DEPARTEMENT")
     private String nomDepartement;
-    @Column(name = "ID_GRADE")
-    private Long idGrade;
-    @Transient
-    private List<Poste> postes;
 }

@@ -22,6 +22,9 @@ public class ResponsableServiceImpl implements ResponsableService {
             throw new ResourceNotFoundException("erreur d'ajouter responsable");
         }
     }
+    public Responsable getById(Long id){
+        return responsableRepo.findById(id).get();
+    }
 
     public List<Responsable> getResponsable() {
         try {

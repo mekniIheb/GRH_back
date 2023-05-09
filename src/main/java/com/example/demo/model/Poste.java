@@ -18,8 +18,5 @@ public class Poste {
     private Long idPoste;
     @NotEmpty(message = "nom du poste ne peut pas être vide ! ")
     private String nomPoste;
-    @Column(name = "ID_DEPARTEMENT")
-    private Long idDepartement;
-//    @Transient
-//    private List<Responsable> responsables;
+
 }

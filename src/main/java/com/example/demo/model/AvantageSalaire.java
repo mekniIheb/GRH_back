@@ -20,7 +20,6 @@ public class AvantageSalaire {
     private Long idAvantageSalaire;
     @Column(name = "NOM_AVANTAGE_SALAIRE")
     private String nomAvantageSalaire;
-    @Column(name = "ID_TYPE_CONTRAT")
-    private Long idTypeContrat;
+
 
 }

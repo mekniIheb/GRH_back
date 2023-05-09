@@ -28,6 +28,9 @@ public class PosteServiceImpl {
             throw new ResourceNotFoundException("error get poste");
         }
     }
+    public Poste getPosteById(Long id){
+        return posteRepo.findById(id).get();
+    }
 
     public void supprimerPoste(Long id) {
         try {

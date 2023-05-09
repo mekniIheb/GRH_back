@@ -55,7 +55,6 @@ public class UserServiceImpl implements UserService {
             user1.setNatureEtude(user.getNatureEtude());
             user1.setCertifications(user.getCertifications());
             user1.setAnneeExperience(user.getAnneeExperience());
-            user1.setNiveauEtude(user.getNiveauEtude());
             user1.setRecomendation(user.getRecomendation());
             user1.setCollaborateur(user.getCollaborateur());
             user1.setCommentaire(user.getCommentaire());

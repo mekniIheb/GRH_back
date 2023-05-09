@@ -4,19 +4,18 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Responsable {
+public class NiveauEtude {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "ID_RESPONSABLE")
-    private Long idResponsable;
-    @Column(name = "NOM_RESPONSABLE")
-    private String nomResponsable;
-
-
+    private Long idNiveauEtude;
+    private String nomNiveauEtude;
 }

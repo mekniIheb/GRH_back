@@ -30,4 +30,10 @@ public class DepartementController {
     public ResponseEntity<List<Departement>> getAllDepartement() {
         return new ResponseEntity<>(departementService.getDepartement(), HttpStatus.OK);
     }
+
+    @GetMapping("/departement/{id}")
+    public ResponseEntity<Departement> getDepartementById(@PathVariable Long id) {
+        return new ResponseEntity<>(departementService.getById(id), HttpStatus.OK);
+    }
+
 }
