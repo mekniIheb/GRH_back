@@ -10,6 +10,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -66,8 +67,6 @@ public class User {
 
     @Column(name = "ANNEE_EXPERIENCE")
     private Long anneeExperience;
-
-
     private Boolean recomendation;
     private String collaborateur;
     private String commentaire;
@@ -79,7 +78,7 @@ public class User {
     private Date dateDebutContrat;
     @Column(name = "DATE_FIN_CONTRAT")
     private Date dateFinContrat;
-
+    private boolean status;
     private Long idTypeContrat;
     private Long idAvantageSalaire;
     private Long idNiveauEtude;
