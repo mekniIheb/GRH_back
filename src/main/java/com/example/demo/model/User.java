@@ -10,7 +10,6 @@ import org.hibernate.annotations.UpdateTimestamp;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -85,7 +84,7 @@ public class User {
     private Long idPoste;
     private Long idResponsable;
     private Long idDepartement;
-
+    private BigDecimal salaireTotale;
 
     @Transient
     private List<PieceJointe> pieceJointes;

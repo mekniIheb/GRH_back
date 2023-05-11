@@ -2,7 +2,6 @@ package com.example.demo.service.serviceImpl;
 
 import com.example.demo.exception.ResourceNotFoundException;
 import com.example.demo.model.User;
-import com.example.demo.repository.PieceJointeRepo;
 import com.example.demo.repository.UserRepo;
 import com.example.demo.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -10,8 +9,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -20,18 +17,11 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
     private final UserRepo userRepo;
-    private final PieceJointeRepo pieceJointeRepo;
 
     @Transactional(rollbackOn = Exception.class)
     public User ajouterUser(User user) {
         try {
             User user1 = userRepo.save(user);
-            if (user.getPieceJointes() != null) {
-                user.getPieceJointes().forEach(pieceJointe -> {
-                    pieceJointe.setIdCollaborateur(user1.getIdCollaborateur());
-                    pieceJointeRepo.save(pieceJointe);
-                });
-            }
             log.info("user ajoutee");
             return user1;
         } catch (Exception e) {

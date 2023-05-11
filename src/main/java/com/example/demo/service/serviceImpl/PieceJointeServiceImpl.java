@@ -5,7 +5,10 @@ import com.example.demo.repository.PieceJointeRepo;
 import com.example.demo.service.PieceJointeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 @Service
@@ -17,6 +20,25 @@ public class PieceJointeServiceImpl implements PieceJointeService {
     @Override
     public List<PieceJointe> getListePieceJointe() {
         return pieceJointeRepo.findAll();
+    }
+
+    public PieceJointe store(MultipartFile file, Long idCollavorateur) throws IOException {
+        String fileName = StringUtils.cleanPath(file.getOriginalFilename());
+
+        PieceJointe FileDB = new PieceJointe();
+
+
+        FileDB.setIdCollaborateur(idCollavorateur);
+
+        FileDB.setName(fileName);
+
+        FileDB.setType(file.getContentType());
+
+        FileDB.setData(file.getBytes());
+
+
+        return pieceJointeRepo.save(FileDB);
+
     }
 
     @Override

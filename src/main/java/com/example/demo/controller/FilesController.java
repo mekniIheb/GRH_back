@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.response.FileInfo;
 import com.example.demo.response.ResponseMessage;
 import com.example.demo.service.FilesStorageService;
+import com.example.demo.service.serviceImpl.PieceJointeServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
@@ -22,12 +23,13 @@ public class FilesController {
 
 
     private final FilesStorageService storageService;
+    private final PieceJointeServiceImpl pieceJointeService;
 
-    @PostMapping("/upload")
-    public ResponseEntity<ResponseMessage> uploadFile(@RequestParam("file") MultipartFile file) {
+    @PostMapping("/upload/{id}")
+    public ResponseEntity<ResponseMessage> uploadFile(@PathVariable Long id,@RequestParam("file") MultipartFile file) {
         String message = "";
         try {
-            storageService.save(file);
+            pieceJointeService.store(file, id);
 
             message = "Uploaded the file successfully: " + file.getOriginalFilename();
             return ResponseEntity.status(HttpStatus.OK).body(new ResponseMessage(message));
