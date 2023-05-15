@@ -42,4 +42,24 @@ public class UserController {
         return new ResponseEntity<>(userService.modifierUser(user, id), HttpStatus.OK);
     }
 
+    @GetMapping("/masse-salariale/{idUser}")
+    public ResponseEntity<Double> getMasseSalariale(@PathVariable("idUser") Long idUser) {
+        return new ResponseEntity<>(userService.getMasseSalariale(idUser), HttpStatus.OK);
+    }
+
+    @GetMapping("/pyramide-age")
+    public ResponseEntity<Double> getMasseSalariale() {
+        return new ResponseEntity<>(userService.getPyramideAge(), HttpStatus.OK);
+    }
+
+    @GetMapping("/salaire-moy")
+    public ResponseEntity<Double> getSalaireMoy() {
+        return new ResponseEntity<>(userService.getSalaireMoyenne(), HttpStatus.OK);
+    }
+
+    @GetMapping("/sum-masse-salariale")
+    public ResponseEntity<Double> getSumMasseSalariale() {
+        return new ResponseEntity<>(userService.getSumSalaireMoy(), HttpStatus.OK);
+    }
+
 }

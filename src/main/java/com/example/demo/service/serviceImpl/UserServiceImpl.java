@@ -88,4 +88,18 @@ public class UserServiceImpl implements UserService {
             throw new ResourceNotFoundException("user n'existe pas");
         }
     }
+    public Double getMasseSalariale(Long idUser) {
+        return userRepo.getMasseSalarialeUser(idUser);
+
+    }
+
+    public Double getPyramideAge() {
+        return userRepo.getPyramideAge();
+    }
+    public Double getSalaireMoyenne() {
+        return userRepo.getSalaireMoyenne();
+    }
+    public Double getSumSalaireMoy() {
+        return userRepo.getSumSalaireMoy();
+    }
 }

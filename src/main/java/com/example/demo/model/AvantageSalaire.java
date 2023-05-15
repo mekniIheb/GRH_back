@@ -19,7 +19,7 @@ public class AvantageSalaire {
     private Long idAvantageSalaire;
     @Column(name = "NOM_AVANTAGE_SALAIRE")
     private String nomAvantageSalaire;
-    @Column(name = "AVANTAGE_SALAIRE")
-    private BigDecimal avantageSalaire;
+    @Column(name = "VALEUR_AVANTAGE")
+    private BigDecimal valeurAvantage;
 
 }

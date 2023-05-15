@@ -85,6 +85,7 @@ public class User {
     private Long idResponsable;
     private Long idDepartement;
     private BigDecimal salaireTotale;
+    private Long age;
 
     @Transient
     private List<PieceJointe> pieceJointes;
